@@ -1,0 +1,23 @@
+{
+  "checked_on": "2026-10-30",
+  "desktop_width": 1363,
+  "passed": [
+    "nine unique H.264/AAC files validated",
+    "all nine browser players reached readyState 4 without media errors across two QA passes",
+    "golf playback time advanced",
+    "starting second video pauses first",
+    "golf project category and brief prefill",
+    "saved video URL included in generated brief",
+    "video selection persists after reload",
+    "local assets resolve and HTML IDs unique",
+    "JavaScript syntax",
+    "branding scan",
+    "three new supplied clips play correctly",
+    "additional golf diary URL included in brief",
+    "duplicate golf outfit upload detected by SHA-256 and represented once"
+  ],
+  "limits": [
+    "mobile viewport interaction testing pending",
+    "automated subtitles not included"
+  ]
+}

@@ -1,0 +1,95 @@
+[
+  {
+    "original": "42528825-D8B1-4CAC-8B80-757E6DFB7E9E.mov",
+    "file": "assets/video/skincare.mp4",
+    "poster": "assets/video/skincare.jpg",
+    "duration": 22.312993,
+    "width": 720,
+    "height": 1280,
+    "bytes": 3467676,
+    "source": "Provided for this portfolio draft."
+  },
+  {
+    "original": "630183B0-FFB3-48B2-9E1B-4CB880A9AE59.mov",
+    "file": "assets/video/golf-style.mp4",
+    "poster": "assets/video/golf-style.jpg",
+    "duration": 13.5,
+    "width": 720,
+    "height": 1280,
+    "bytes": 2135970,
+    "source": "Provided for this portfolio draft.",
+    "duplicate_uploads": [
+      "630183B0-FFB3-48B2-9E1B-4CB880A9AE59(1).mov"
+    ]
+  },
+  {
+    "original": "165AB7C0-B141-42C8-876F-01E9664F19D6.mov",
+    "file": "assets/video/campaign-film.mp4",
+    "poster": "assets/video/campaign-film.jpg",
+    "duration": 30.033333,
+    "width": 720,
+    "height": 1280,
+    "bytes": 4579565,
+    "source": "Provided for this portfolio draft."
+  },
+  {
+    "original": "IMG_0289.mov",
+    "file": "assets/video/hair-routine.mp4",
+    "poster": "assets/video/hair-routine.jpg",
+    "duration": 35.066667,
+    "width": 720,
+    "height": 1280,
+    "bytes": 5379345,
+    "source": "Provided for this portfolio draft."
+  },
+  {
+    "original": "31AA07C6-E129-48BF-9F92-9CBAAFF4D098.mov",
+    "file": "assets/video/on-the-course.mp4",
+    "poster": "assets/video/on-the-course.jpg",
+    "duration": 68.133333,
+    "width": 720,
+    "height": 1280,
+    "bytes": 10374388,
+    "source": "Provided for this portfolio draft."
+  },
+  {
+    "original": "IMG_1099.mov",
+    "file": "assets/video/beauty-routine.mp4",
+    "poster": "assets/video/beauty-routine.jpg",
+    "duration": 132.9,
+    "width": 720,
+    "height": 1280,
+    "bytes": 20031536,
+    "source": "Provided for this portfolio draft."
+  },
+  {
+    "original": "IMG_1268.mov",
+    "file": "assets/video/golf-swing.mp4",
+    "poster": "assets/video/golf-swing.jpg",
+    "duration": 49.2,
+    "width": 720,
+    "height": 1280,
+    "bytes": 6837236,
+    "source": "Provided for this portfolio draft."
+  },
+  {
+    "original": "IMG_0585.mov",
+    "file": "assets/video/curls-outdoors.mp4",
+    "poster": "assets/video/curls-outdoors.jpg",
+    "duration": 10.679002,
+    "width": 720,
+    "height": 1280,
+    "bytes": 1709400,
+    "source": "Provided for this portfolio draft."
+  },
+  {
+    "original": "IMG_1269.mov",
+    "file": "assets/video/beauty-diary.mp4",
+    "poster": "assets/video/beauty-diary.jpg",
+    "duration": 103.066667,
+    "width": 720,
+    "height": 1280,
+    "bytes": 14547495,
+    "source": "Provided for this portfolio draft."
+  }
+]
