@@ -1,10 +1,10 @@
 # Haylie Turnquest · In her element ✧
 
-Fashion, beauty, golf, and a fresh perspective. A personal portfolio with a pink/lilac portal design, a visual diary, and a simple way to start a collaboration.
+Fashion, beauty, golf, and a fresh perspective. A personal portfolio with a soft cottagecore design in cream, blush, and sage, a visual diary, and a simple way to start a collaboration.
 
 **[Enter Haylie’s world ↗](https://siamakenna.github.io/haylie-turnquest-portfolio/)** · **[Connections & email](https://siamakenna.github.io/haylie-turnquest-portfolio/#connections)**
 
-## Choose a portal
+## Explore the portfolio
 
 | Explore | What’s inside |
 | --- | --- |
@@ -25,7 +25,7 @@ Email links open the visitor’s email app. Briefs are prepared locally; visitor
 See **[the update guide](docs/UPDATE-GUIDE.md)** for changing copy, colors, contact details, photos, clips, and navigation, plus a release checklist and future improvement options.
 
 - `index.html` — page content, navigation, contact links, and video players.
-- `portal.css` — portal colors, window frames, navigation, and responsive layout.
+- `cottage.css` — cottage colors, paper details, navigation, and responsive layout.
 - `styles.css` — original editorial styling and media layouts.
 - `script.js` — gallery data, saved references, collaboration briefs, and menu behavior.
 - `assets/credits.json` and `assets/video/sources.json` — source credits and video inventory.
@@ -46,4 +46,4 @@ All 11 photos, nine unique H.264/AAC videos, and nine posters from the supplied 
 
 Photography comes from Haylie’s public JAG Models and Wilhelmina Miami portfolios. All rights remain with their respective owners; individual photographers were not identified in those listings. Videos were supplied for this portfolio draft; music and campaign rights remain with their respective owners. Exact sources are preserved in the asset manifests and on-site Credits dialog.
 
-This portfolio is a review draft. `qa-results.json` records the original delivery checks; [refresh checks](docs/QA-2026-11-02.md) document the portal and contact update.
+This portfolio is a review draft. `qa-results.json` records the original delivery checks; [refresh checks](docs/QA-2026-11-02.md) document the navigation, cottage design, and contact update.

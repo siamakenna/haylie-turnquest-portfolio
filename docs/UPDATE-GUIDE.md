@@ -6,7 +6,7 @@ Repository: https://github.com/siamakenna/haylie-turnquest-portfolio
 
 ## Navigation and contact improvements included
 
-The sticky header keeps Home, Portfolio, Golf, In motion, Meet Haylie, Collaborate, and Connections reachable. On narrower screens, Menu reveals every section instead of hiding links. Escape closes the menu and returns focus to its button. Choosing a destination closes it and moves keyboard focus into the section. The current section is marked while scrolling. A portal map offers four entry points and the footer includes Back to top.
+The soft cottage journal design keeps the imagery central. The sticky header keeps Home, Portfolio, Golf, In motion, Meet Haylie, Collaborate, and Connections reachable. On narrower screens, Menu reveals every section instead of hiding links. Escape closes the menu and returns focus to its button. Choosing a destination closes it and moves keyboard focus into the section. The current section is marked while scrolling. A “Stay a little” section map offers four entry points and the footer includes Back to top.
 
 Connections contains a direct email link to haylieturnquest2002@gmail.com, Instagram, agency links, and a shortcut to the brief builder. Generated briefs offer an email draft with the subject and body filled in, plus copy and download alternatives. No message is sent by the website. An email app must be configured; long mailto drafts can be truncated by some apps, so copy or attach the downloaded text when needed.
 
@@ -22,8 +22,8 @@ Connections contains a direct email link to haylieturnquest2002@gmail.com, Insta
 | Adjustment | File and location |
 | --- | --- |
 | Intro, biography, campaign labels, section copy | `index.html`, in the corresponding section |
-| Pink/lilac palette and dark canvas | `portal.css`, variables under `:root` and the section rules |
-| Portal cards | `index.html`, `.portal-grid` |
+| Cream, blush, sage palette and paper background | `cottage.css`, variables under `:root` and the section rules |
+| Section-map cards | `index.html`, `.portal-grid` |
 | Navigation label/order | `index.html`, `#main-navigation`; keep each `href` matched to a unique section ID |
 | Direct contact address | `index.html`, all `mailto:` links and visible email text; `script.js`, `CONTACT_EMAIL` |
 | Agency and Instagram URLs | `index.html` links; also update `JAG` and the brief footer in `script.js` if these change |
