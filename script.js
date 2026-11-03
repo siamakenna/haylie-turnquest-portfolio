@@ -1,4 +1,6 @@
 'use strict';
+// Contact address: update the matching mailto links in index.html when changing this.
+const CONTACT_EMAIL='haylieturnquest2002@gmail.com';
 const JAG='https://jagmodels.com/model/ny-haylie-turnquest/';
 const looks=[
  {id:1,title:'Soft focus',category:'beauty',photo:0,description:'Natural curls, warm light, and a close-up perspective.'},
@@ -44,9 +46,9 @@ $('#look-dialog').addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.prev
 $('#edit-to-brief').addEventListener('click',()=>{const has=(saved.size+savedVideos.size)>0;$('#edit-dialog').close();$(has?'#collaborate':'#portfolio').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});if(has)$('#brief-form input').focus({preventScroll:true});});
 function setService(name){$('#brief-form select').value=name;document.querySelectorAll('[data-service]').forEach(b=>{const on=b.dataset.service===name;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});}
 document.querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click',()=>{setService(b.dataset.service);say(`${b.dataset.service} selected`);}));$('#brief-form select').addEventListener('change',e=>setService(e.target.value));
-$('#brief-form').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const selected=[...saved].map(id=>{const l=looks.find(x=>x.id===id);return `• ${l.title} (${l.category}) — ${new URL(photo(l.photo),location.href).href}`;}).join('\n');brief=`COLLABORATION INQUIRY — HAYLIE TURNQUEST\n\nName / brand: ${String(f.get('brand')).trim()}\nProject: ${f.get('project')}\nTiming: ${String(f.get('timing')).trim()||'To discuss'}\n\nTHE VISION\n${String(f.get('idea')).trim()}\n\nSAVED INSPIRATION\n${(selected+'\n'+[...savedVideos].map(id=>{const v=videoRefs.find(x=>x.id===id);return `• ${v.title} (${v.category} video) — ${new URL(`assets/video/${id}.mp4`,location.href).href}`;}).join('\n')).trim()||'No specific references selected.'}\n\nScope, deliverables, usage rights, availability, and rates to be confirmed.\n\nPrepared via Haylie Turnquest’s portfolio.\nInstagram: https://www.instagram.com/haylie_turnquest/\nModeling inquiries: ${JAG}`;$('#brief-preview').textContent=brief;$('#copy-status').textContent='Copy your note, then share it directly.';showDialog('#brief-dialog');});
-$('#copy-brief').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(brief);$('#copy-status').textContent='Copied. Open Instagram or the agency link below to share your note.';}catch{$('#copy-status').textContent='Copy is unavailable in this browser. Download the brief or select the preview text.';}});
-$('#download-brief').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='haylie-turnquest-collaboration-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#copy-status').textContent='Brief downloaded. Share it directly with Haylie or her agency.';});
+$('#brief-form').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const selected=[...saved].map(id=>{const l=looks.find(x=>x.id===id);return `• ${l.title} (${l.category}) — ${new URL(photo(l.photo),location.href).href}`;}).join('\n');brief=`COLLABORATION INQUIRY — HAYLIE TURNQUEST\n\nName / brand: ${String(f.get('brand')).trim()}\nProject: ${f.get('project')}\nTiming: ${String(f.get('timing')).trim()||'To discuss'}\n\nTHE VISION\n${String(f.get('idea')).trim()}\n\nSAVED INSPIRATION\n${(selected+'\n'+[...savedVideos].map(id=>{const v=videoRefs.find(x=>x.id===id);return `• ${v.title} (${v.category} video) — ${new URL(`assets/video/${id}.mp4`,location.href).href}`;}).join('\n')).trim()||'No specific references selected.'}\n\nScope, deliverables, usage rights, availability, and rates to be confirmed.\n\nPrepared via Haylie Turnquest’s portfolio.\nEmail: ${CONTACT_EMAIL}\nInstagram: https://www.instagram.com/haylie_turnquest/\nModeling inquiries: ${JAG}`;$('#brief-preview').textContent=brief;$('#email-brief').href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Collaboration inquiry — '+String(f.get('brand')).trim())}&body=${encodeURIComponent(brief)}`;$('#copy-status').textContent='Review your note, then email, copy, or download it.';showDialog('#brief-dialog');});
+$('#copy-brief').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(brief);$('#copy-status').textContent='Copied. Paste your note into an email to Haylie, or share it with her agency.';}catch{$('#copy-status').textContent='Copy is unavailable in this browser. Download the brief or select the preview text.';}});
+$('#download-brief').addEventListener('click',()=>{const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='haylie-turnquest-collaboration-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('#copy-status').textContent='Brief downloaded. Attach it to an email to Haylie or her agency.';});
 $('#credits-open').addEventListener('click',()=>showDialog('#credits-dialog'));document.querySelector('a[href="#credits"]').addEventListener('click',e=>{e.preventDefault();showDialog('#credits-dialog');});
 for(const d of document.querySelectorAll('dialog')){d.querySelector('.dialog-close').addEventListener('click',()=>d.close());d.addEventListener('click',e=>{if(e.target!==d)return;const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();});}
 $('#year').textContent=new Date().getFullYear();renderGallery();
@@ -54,3 +56,39 @@ $('#year').textContent=new Date().getFullYear();renderGallery();
 for(const b of document.querySelectorAll('[data-video-save]'))b.addEventListener('click',()=>{const id=b.dataset.videoSave;if(savedVideos.has(id)){savedVideos.delete(id);say('Video removed from your brief');}else{savedVideos.add(id);say('Video added to your brief ♡');}persist();});
 $('#golf-brief').addEventListener('click',()=>{setService('Golf & sport');const field=$('#brief-form textarea');if(!field.value.trim())field.value='Golf collaboration: ';$('#collaborate').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});field.focus({preventScroll:true});});
 for(const video of document.querySelectorAll('video'))video.addEventListener('play',()=>{for(const other of document.querySelectorAll('video'))if(other!==video)other.pause();});
+
+// Navigation stays usable without JavaScript; the compact menu is enhanced here.
+const menuToggle=$('.menu-toggle');
+const mainNavigation=$('#main-navigation');
+const narrowNavigation=matchMedia('(max-width: 1100px)');
+function closeMenu(restoreFocus=false){
+ menuToggle.setAttribute('aria-expanded','false');
+ mainNavigation.classList.remove('is-open');
+ if(restoreFocus)menuToggle.focus();
+}
+document.body.classList.add('navigation-ready');
+menuToggle.addEventListener('click',()=>{
+ const open=menuToggle.getAttribute('aria-expanded')!=='true';
+ menuToggle.setAttribute('aria-expanded',String(open));
+ mainNavigation.classList.toggle('is-open',open);
+});
+mainNavigation.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menuToggle.getAttribute('aria-expanded')==='true')closeMenu(true);});
+document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))closeMenu();});
+narrowNavigation.addEventListener('change',()=>closeMenu());
+const sectionLinks=[...mainNavigation.querySelectorAll('a')];
+function markSection(id){for(const a of sectionLinks){if(a.hash==='#'+id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');}}
+if('IntersectionObserver' in window){
+ const observedSections=sectionLinks.map(a=>document.querySelector(a.hash)).filter(Boolean);
+ const sectionObserver=new IntersectionObserver(entries=>{for(const entry of entries)if(entry.isIntersecting)markSection(entry.target.id);},{rootMargin:'-15% 0px -65% 0px',threshold:0});
+ for(const section of observedSections)sectionObserver.observe(section);
+}
+// Move keyboard focus to anchor destinations after navigation, including a closed menu.
+document.addEventListener('click',e=>{
+ const a=e.target.closest('a[href^="#"]');
+ if(!a||a.hash.length<2||a.hash==='#credits')return;
+ const destination=document.querySelector(a.hash);
+ if(!destination)return;
+ destination.setAttribute('tabindex','-1');
+ destination.focus({preventScroll:true});
+});

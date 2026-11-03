@@ -1,47 +1,49 @@
-# Haylie Turnquest — Portfolio Draft
+# Haylie Turnquest · In her element ✧
 
-A fashion, beauty, lifestyle, and creative collaboration portfolio for Haylie Turnquest.
+Fashion, beauty, golf, and a fresh perspective. A personal portfolio with a pink/lilac portal design, a visual diary, and a simple way to start a collaboration.
 
-## Preview features
+**[Enter Haylie’s world ↗](https://siamakenna.github.io/haylie-turnquest-portfolio/)** · **[Connections & email](https://siamakenna.github.io/haylie-turnquest-portfolio/#connections)**
 
-- Dedicated golf section with on-course and outfit videos.
-- Nine supplied videos with native playback controls and video references in briefs.
-- Filterable photography gallery and full-image viewer.
-- Saved-look moodboard, kept in the visitor’s browser.
-- Modeling, UGC/social, golf/sport, and brand collaboration brief builder.
-- Copy and download a brief with saved visual references.
-- Direct links to Instagram and official agency portfolios.
-- Responsive layouts, keyboard navigation, native dialogs, and reduced-motion support.
+## Choose a portal
 
-## Run locally
+| Explore | What’s inside |
+| --- | --- |
+| [The portfolio](https://siamakenna.github.io/haylie-turnquest-portfolio/#portfolio) | Filter fashion, beauty, lifestyle, and digitals. Open a photo and save your favorites. |
+| [Golf diary](https://siamakenna.github.io/haylie-turnquest-portfolio/#golf) | Three unique golf clips, on-course style, and a golf brief shortcut. |
+| [In motion](https://siamakenna.github.io/haylie-turnquest-portfolio/#motion) | Six beauty, hair, skincare, and campaign videos with native playback controls. |
+| [Collaborate](https://siamakenna.github.io/haylie-turnquest-portfolio/#collaborate) | Create a brief with saved photos and videos; email, copy, or download it. |
+| [Connections](https://siamakenna.github.io/haylie-turnquest-portfolio/#connections) | Email Haylie directly, find her on Instagram, or visit her agencies. |
 
-Open `index.html`, or serve this directory with any static web server. No installation or build step is required. Clipboard features work best over HTTPS or localhost.
+## Contact
 
-## GitHub Pages
+[haylieturnquest2002@gmail.com](mailto:haylieturnquest2002@gmail.com)
 
-In the repository’s **Settings → Pages**, choose **Deploy from a branch**, then **main** and **/ (root)**. Save and wait for the deployment to complete.
+Email links open the visitor’s email app. Briefs are prepared locally; visitors review and send them themselves. Favorites remain in the current browser when storage is available. Availability, rates, scope, and usage rights are confirmed with Haylie or her agency.
 
-## Editing
+## Update the portfolio
 
-- `index.html`: page content and external links.
-- `styles.css`: colors, typography, and responsive layouts.
-- `script.js`: gallery data, saved looks, and brief behavior.
-- `assets/credits.json`: per-image sources and rights notes.
+See **[the update guide](docs/UPDATE-GUIDE.md)** for changing copy, colors, contact details, photos, clips, and navigation, plus a release checklist and future improvement options.
 
-This is a draft for review. Creator service categories are collaboration inquiry options. Availability, rates, and usage rights are confirmed directly with Haylie or her agency. Briefs are generated locally; the website does not send inquiries automatically.
+- `index.html` — page content, navigation, contact links, and video players.
+- `portal.css` — portal colors, window frames, navigation, and responsive layout.
+- `styles.css` — original editorial styling and media layouts.
+- `script.js` — gallery data, saved references, collaboration briefs, and menu behavior.
+- `assets/credits.json` and `assets/video/sources.json` — source credits and video inventory.
 
-## Photography
+## Local preview & publishing
 
-Images are sourced from Haylie Turnquest’s public JAG Models and Wilhelmina Miami portfolios. All image rights remain with their respective rights holders. Individual photographer names were not provided in the source listings. See `assets/credits.json` for exact sources.
+Static HTML/CSS/JavaScript. No install or build step.
 
-## Checks
+```sh
+python3 -m http.server 8000
+```
 
-Desktop checks passed for gallery filtering, photo navigation, saved looks after reload, project selection, brief generation, clipboard copy, text download, and image loading. Responsive CSS is included; mobile browser interaction testing is pending.
+Open `http://localhost:8000/`. GitHub Pages serves `main` → `/ (root)` with `.nojekyll` retained. A push to `main` triggers deployment; check the repository’s Actions tab for completion before sharing an update.
 
-## Video assets
+## Media & credits
 
-The nine unique supplied videos are converted to 720p H.264/AAC MP4 with fast-start playback, 30 fps, and poster frames. The HDR beauty routine is tone-mapped to SDR for consistent browser display. Full clips are retained; files are capped for static hosting. Original filenames and durations are recorded in `assets/video/sources.json`. Videos never autoplay and pause when another clip starts. Original uploads are preserved separately.
+All 11 photos, nine unique H.264/AAC videos, and nine posters from the supplied portfolio are retained. Video clips do not autoplay; starting another pauses the previous one. Three clips are golf and six are beauty/campaign. The duplicate golf outfit upload is represented once.
 
-The nine video players and golf brief flow passed desktop browser QA, including paused previous playback and persistence of saved video references. See `qa-results.json`.
+Photography comes from Haylie’s public JAG Models and Wilhelmina Miami portfolios. All rights remain with their respective owners; individual photographers were not identified in those listings. Videos were supplied for this portfolio draft; music and campaign rights remain with their respective owners. Exact sources are preserved in the asset manifests and on-site Credits dialog.
 
-The repeated golf outfit upload is byte-identical to the existing clip and is represented once. Golf includes three clips; the motion section contains six.
+This portfolio is a review draft. `qa-results.json` records the original delivery checks; [refresh checks](docs/QA-2026-11-02.md) document the portal and contact update.

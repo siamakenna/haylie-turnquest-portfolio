@@ -1,0 +1,169 @@
+/* Haylie's portal layer. Keep colors and layout adjustments together here. */
+:root {
+  --portal-night: #17111e;
+  --portal-plum: #30203e;
+  --portal-pink: #f5b9da;
+  --portal-lilac: #d9c7ff;
+  --portal-mint: #d4f4df;
+  --portal-outline: #ab8bc2;
+}
+html { scroll-padding-top: 110px; }
+body.haylie-portal {
+  background: var(--portal-night);
+  background-image: radial-gradient(ellipse at 8% 10%, #76508c33, transparent 40%), radial-gradient(ellipse at 95% 30%, #c55e9e20, transparent 35%);
+}
+.haylie-portal .site-header {
+  position: sticky; top: 0; z-index: 50; min-height: 82px; height: auto;
+  padding: 14px max(3%, calc((100vw - 1380px) / 2)); gap: 22px;
+  background: #17111ef5; color: #fbf4ff; border-bottom: 1px solid #694b7d;
+}
+.portal-brand { flex-shrink: 0; font: 700 22px/1 var(--sans); letter-spacing: -.06em; }
+.portal-brand span { color: var(--portal-pink); font-weight: 400; }
+.site-header nav { gap: 5px; font: 10px var(--mono); flex-wrap: wrap; justify-content: center; }
+.site-header nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 10px; border: 1px solid transparent; border-radius: 5px; }
+.site-header nav a:hover, .site-header nav a[aria-current] { color: #fff; background: #392644; border-color: #ba8bd1; }
+.site-header nav a[href="#connections"] { color: var(--portal-pink); }
+.site-header .saved-link { flex-shrink: 0; min-height: 44px; color: #f9eaff; }
+.site-header .saved-label { font-size: 11px; }
+.site-header #saved-count { border-color: var(--portal-pink); }
+.menu-toggle { display: none; }
+.haylie-portal main { width: min(1280px, calc(100% - 64px)); margin: 28px auto 0; }
+.haylie-portal main:focus, .haylie-portal section[tabindex="-1"]:focus { outline: none; }
+.haylie-portal .section, .haylie-portal .hero, .haylie-portal .closing {
+  margin-bottom: 32px; border: 1px solid var(--portal-outline); border-radius: 12px;
+  box-shadow: 6px 6px 0 #69477c; overflow: clip;
+}
+.haylie-portal .section { padding: 56px 5%; background: #fbf7fc; scroll-margin-top: 10px; }
+.haylie-portal .hero { background: var(--portal-plum); color: #fdf4ff; padding: 0 5%; }
+.haylie-portal .hero-top { margin: 0 -5.6%; padding: 15px 5.6%; border-bottom: 1px solid #9b75ae; background: #473154; font-size: 9px; gap: 16px; }
+.window-dots { color: var(--portal-pink); letter-spacing: .2em; margin-right: 14px; }
+.haylie-portal .hero-stage { min-height: 610px; grid-template-columns: 1.15fr 1fr; }
+.haylie-portal .hero-copy > .eyebrow { color: var(--portal-mint); max-width: 330px; }
+.haylie-portal h1 { font: 700 clamp(65px, 7.8vw, 110px)/.98 var(--sans); letter-spacing: -.07em; margin: 25px -40px 26px 0; }
+.haylie-portal h1 em { color: var(--portal-pink); font-weight: 400; letter-spacing: -.065em; }
+.haylie-portal .title-star { left: 88%; top: -15px; font-size: 50px; color: var(--portal-mint); }
+.haylie-portal .hero-description { color: #e7d8f1; }
+.haylie-portal .hero .pill { background: var(--portal-pink); border-color: var(--portal-pink); color: #24142b; box-shadow: 3px 3px 0 #9870ad; }
+.hero-connect { display: inline-block; margin: 20px 0 0 20px; font-size: 12px; color: var(--portal-mint); text-decoration: underline; text-underline-offset: 5px; }
+.haylie-portal .hero-photos { height: 540px; }
+.haylie-portal .main-photo { height: 445px; width: 72%; left: 0; }
+.haylie-portal .inset-photo { height: 280px; width: 45%; right: -3%; }
+.haylie-portal .hero-photo { color: var(--ink); border: 1px solid #d0a7df; box-shadow: 6px 7px 0 #17111e70; }
+.haylie-portal .orbit { color: var(--portal-pink); }
+.haylie-portal .hero-bottom { padding-bottom: 22px; color: #e5d3ed; }
+.haylie-portal .ribbon { margin: 0 0 32px; border: 1px solid #dd9fc7; border-radius: 5px; background: var(--portal-pink); }
+.haylie-portal .eyebrow { color: #694279; }
+.haylie-portal h2 { font-size: clamp(40px, 4.5vw, 64px); }
+.haylie-portal .section-heading { margin-bottom: 32px; }
+.haylie-portal .section-heading > p { font-size: 12px; }
+.haylie-portal .portal-map { background: #e9dff5; }
+.portal-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.portal-card, .connection-card { min-width: 0; display: flex; flex-direction: column; border: 1px solid #9c7caf; border-radius: 7px; background: #fffafd; box-shadow: 4px 4px 0 #cbb1dd; padding: 22px; }
+.portal-card { transition: transform .2s, box-shadow .2s; }
+.portal-card:hover { transform: translateY(-4px); box-shadow: 4px 8px 0 #bfa2d2; }
+.portal-card:nth-child(2) { background: #eff9ef; }
+.portal-card:nth-child(3) { background: #f8e8ef; }
+.portal-card:nth-child(4) { background: #eee5ff; }
+.portal-label { display: flex; justify-content: space-between; gap: 10px; font: 9px/1.6 var(--mono); color: #694279; border-bottom: 1px solid #d4bfdf; padding-bottom: 12px; }
+.portal-label b { font-size: 16px; line-height: 1; }
+.portal-card h3, .connection-card h3 { font: 400 28px/1.1 var(--serif); letter-spacing: -.04em; margin: 22px 0 12px; }
+.portal-card p, .connection-card p { font-size: 12px; line-height: 1.7; margin-bottom: 24px; }
+.portal-tag { font: 8px/1.6 var(--mono); margin-top: auto; color: #674574; }
+.haylie-portal .golf-section { background: #eff4eb; }
+.haylie-portal .motion { background: #f3eaf8; }
+.haylie-portal .campaigns { background: #eee4f4; }
+.haylie-portal .look-frame, .haylie-portal .video-wrap, .haylie-portal .campaign-img { border: 1px solid #bc9fca; border-radius: 6px; }
+.haylie-portal .golf-extra { border: 1px solid #cbb7d2; border-radius: 8px; }
+.haylie-portal .collaborate { background: #e4d5f3; }
+.haylie-portal .brief-card { border-radius: 8px; }
+.haylie-portal .connections { background: #f4dbe9; }
+.connection-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+.connection-card { padding: 30px; }
+.connection-card .text-link { align-self: flex-start; margin-top: auto; }
+.email-card { background: #35203e; color: #fff4fc; border-color: #35203e; }
+.email-card:hover { background: #483052; }
+.email-card .portal-label, .email-card .portal-tag { color: #f4c5e2; }
+.email-card p { font-size: clamp(13px, 1.6vw, 21px); overflow-wrap: anywhere; }
+.connection-socials { display: flex; flex-wrap: wrap; gap: 12px 25px; margin-top: 30px; }
+.connection-socials a { font: 11px var(--mono); padding: 12px 0; text-decoration: underline; text-underline-offset: 5px; }
+.haylie-portal .connections .small-note { max-width: 650px; }
+.haylie-portal .closing { background: #e9c2da; }
+.haylie-portal footer { width: min(1280px, calc(100% - 64px)); margin: auto; padding: 16px 0 35px; color: #f6e7fc; }
+.haylie-portal footer > div { flex-wrap: wrap; gap: 14px 22px; }
+.haylie-portal footer p { color: #d3b9e1; }
+.haylie-portal .brief-actions { flex-wrap: wrap; }
+.haylie-portal .brief-actions .pill { gap: 10px; }
+.haylie-portal :is(a,button,input,textarea,select):focus-visible { outline: 3px solid #ae4c9a; outline-offset: 4px; }
+.haylie-portal .site-header :is(a,button):focus-visible { outline-color: var(--portal-mint); }
+@media (max-width: 1100px) {
+  .haylie-portal .site-header { flex-wrap: wrap; padding: 12px 4%; gap: 18px; min-height: 74px; }
+  .portal-brand { margin-right: auto; }
+  .site-header nav { order: 4; width: 100%; justify-content: flex-start; }
+  .navigation-ready .menu-toggle { display: inline-flex; gap: 14px; align-items: center; padding: 10px 14px; min-height: 44px; border: 1px solid #ad83c3; background: #34213f; border-radius: 5px; color: white; font: 11px var(--mono); }
+  .navigation-ready .site-header nav { display: none; }
+  .navigation-ready .site-header nav.is-open { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); padding-top: 8px; border-top: 1px solid #694b7d; max-height: 55dvh; overflow: auto; }
+  .portal-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .haylie-portal h1 { font-size: clamp(64px, 8vw, 90px); }
+  .haylie-portal .hero-stage { min-height: 530px; }
+  .haylie-portal .hero-photos { height: 470px; }
+  .haylie-portal .main-photo { height: 380px; }
+  .haylie-portal .inset-photo { height: 235px; }
+  .hero-connect { margin-left: 0; display: block; }
+}
+@media (max-width: 700px) {
+  html { scroll-padding-top: 95px; }
+  .haylie-portal main { width: calc(100% - 28px); margin-top: 18px; }
+  .haylie-portal .site-header { gap: 10px; }
+  .portal-brand { font-size: 19px; }
+  .site-header .saved-label { display: none; }
+  .site-header .saved-link { font-size: 18px; gap: 4px; }
+  .navigation-ready .menu-toggle { padding: 10px; gap: 8px; }
+  .navigation-ready .site-header nav.is-open { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .haylie-portal .site-header nav a { display: flex; font-size: 11px; }
+  .haylie-portal .section { padding: 35px 6%; margin-bottom: 24px; }
+  .haylie-portal .hero { margin-bottom: 24px; }
+  .haylie-portal .hero-top { padding: 12px 6%; font-size: 7px; }
+  .haylie-portal .hero-top > span { max-width: 190px; }
+  .window-dots { display: block; margin-bottom: 5px; }
+  .haylie-portal .hero-copy { padding-top: 32px; }
+  .haylie-portal .hero-copy > .eyebrow { font-size: 8px; max-width: 270px; }
+  .haylie-portal .hero-stage { min-height: 0; display: flex; }
+  .haylie-portal h1 { font-size: clamp(60px, 13.5vw, 92px); margin: 24px 0; }
+  .haylie-portal .title-star { left: 83%; font-size: 35px; }
+  .haylie-portal .hero-photos { height: 420px; margin-top: 0; }
+  .haylie-portal .main-photo { height: 340px; left: 5%; }
+  .haylie-portal .inset-photo { height: 230px; right: 0; }
+  .hero-connect { display: inline-block; margin: 16px 0 0; padding: 7px 0; }
+  .haylie-portal .hero-bottom { gap: 14px; font-size: 7px; }
+  .haylie-portal .hero-bottom > span { font-size: 9px; }
+  .haylie-portal .ribbon { margin-bottom: 24px; }
+  .portal-grid { gap: 14px; }
+  .portal-card { padding: 16px; }
+  .portal-label { font-size: 7px; }
+  .portal-card h3 { font-size: 26px; }
+  .portal-card p { font-size: 11px; }
+  .portal-tag { font-size: 7px; }
+  .connection-grid { grid-template-columns: 1fr; gap: 20px; }
+  .connection-card { padding: 24px; }
+  .email-card p { font-size: 15px; }
+  .connection-socials { gap: 8px 20px; }
+  .haylie-portal footer { width: calc(100% - 36px); padding-top: 10px; }
+  .haylie-portal .closing { margin-bottom: 26px; }
+  .haylie-portal .brief-actions .pill { width: 100%; min-height: 44px; }
+  .haylie-portal .about-photo { margin-left: 0; }
+  .haylie-portal .photo-sticker { right: -20px; }
+}
+@media (max-width: 380px) {
+  .portal-brand { font-size: 16px; }
+  .portal-grid { grid-template-columns: 1fr; }
+  .haylie-portal .hero-top > a { max-width: 95px; text-align: right; }
+  .haylie-portal .hero-photos { height: 355px; }
+  .haylie-portal .main-photo { height: 290px; }
+  .haylie-portal .inset-photo { height: 195px; }
+  .haylie-portal .golf-extra { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .portal-card { transition: none; }
+  .portal-card:hover { transform: none; }
+}
